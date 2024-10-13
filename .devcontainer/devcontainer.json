@@ -1,0 +1,23 @@
+{
+  "name": "DarkRoom",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "darkroom-dev",
+	"workspaceFolder": "/darkroom",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+        "Angular.ng-template",
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "manishsencha.readme-preview",
+        "wix.vscode-import-cost",
+        "natewallace.angular2-inline",
+        "ms-azuretools.vscode-docker",
+        "pink-dream.pink-dream"
+      ]
+		}
+	}
+}

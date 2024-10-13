@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  darkroom-dev:
+    image: darkroom-dev
+    container_name: darkroom-dev
+    build:
+      context: ../.
+      dockerfile: ./.devcontainer/Dockerfile
+    working_dir: /darkroom
+    ports:
+      - "4199:4199"
+    volumes:
+      - ..:/darkroom:cached
+    tty: true

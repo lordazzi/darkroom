@@ -1,0 +1,49 @@
+body {
+  --base: rgb(54 42 52);
+  --primary: rgb(255 111 139);
+  --secondary: rgb(179 60 81);
+
+  --separator: rgb(199 144 234);
+
+  background-color: var(--base);
+}
+
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  margin-top: 10px;
+  background-color: transparent !important;
+
+  &.primary::before,
+  &.primary::after {
+    background-color: var(--primary);
+  }
+
+  &.secondary::before,
+  &.secondary::after {
+    background-color: var(--secondary);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 10px 10px;
+  }
+
+  &::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  &::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+}
