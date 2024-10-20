@@ -1,0 +1,162 @@
+@import '../../../styles/tools/brutal-tools';
+
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(209 160 201);
+}
+
+.heading {
+  @include brutal-border;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  display: flex;
+  z-index: 3;
+
+  .title {
+    flex: 3;
+  }
+}
+
+.history {
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background: linear-gradient(59deg, rgba(131,58,180,1) 0%, rgba(214,18,206,1) 48%, rgba(214,18,206,1) 53%, rgba(228,53,53,1) 100%);
+  background: linear-gradient(59deg, rgba(48,25,64,1) 0%, rgba(87,9,84,1) 48%, rgba(87,9,84,1) 53%, rgba(134,0,0,1) 100%);
+  background: linear-gradient(59deg, rgba(58,24,77,1) 0%, rgba(57,40,54,1) 43%, rgba(57,40,54,1) 59%, rgba(83,2,2,1) 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  > div {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 600px;
+
+    .message {
+      @include brutal-border;
+      width: 85%;
+      color: white;
+      padding: .5rem;
+      margin-bottom: .5rem;
+      border-radius: 8px;
+      position: relative;
+
+      > .author {
+        font-weight: bold;
+      }
+
+      > div {
+        text-wrap: balance;
+        padding-right: 1.5rem;
+      }
+  
+      &:before {
+        content: "";
+        display: block;
+        background-color: transparent;
+        position: absolute;
+        top: 10px;
+        width: 0px;
+        height: 0px;
+        float: left;
+        border: 10px solid transparent;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        background-color: transparent;
+        position: absolute;
+        top: 6px;
+        width: 0px;
+        height: 0px;
+        float: left;
+        border: 15px solid transparent;
+      }
+  
+      &.received {
+        float: left;
+      }
+  
+      &.send {
+        float: right;
+      }
+  
+      time {
+        position: absolute;
+        right: .75rem;
+        bottom: .5rem;
+        font-size: 10px;
+      }
+
+      &:before {
+        z-index: 2;
+      }
+
+      &:after {
+        z-index: 1;
+      }
+
+      &.received.bg-male:before {
+        border-right-color: var(--male);
+        left: -20px;
+      }
+    
+      &.received.bg-female:before {
+        border-right-color: var(--female);
+        left: -20px;
+      }
+
+      &.received:after {
+        border-right-color: var(--contrast);
+        left: -28px;
+        border-width: 14px;
+        top: 6px;
+      }
+      
+      &.send.bg-male:before {
+        border-left-color: var(--male);
+        left: 100%;
+      }
+    
+      &.send.bg-female:before {
+        border-left-color: var(--female);
+        left: 100%;
+      }
+
+      &.send:after {
+        border-left-color: var(--contrast);
+        left: calc(100% + 2px);
+      }
+    }
+  }
+}
+
+.compose {
+  @include brutal-border;
+
+  flex: 0 0 64px;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  z-index: 3;
+
+  textarea {
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none;
+  }
+
+  .brutal-button-icon {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

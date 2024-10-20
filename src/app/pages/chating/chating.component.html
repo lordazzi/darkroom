@@ -1,11 +1,63 @@
-<section>
+<header class="heading bg-base">
+  <span class="title">{{title}}</span>
+</header>
+
+<section #history class="history">
   <div>
-    <span>author:</span>
-    <span>test</span>
+
+    <div class="message received bg-female">
+      <div class="author">She:</div>
+      <div>Hey darling</div>
+      <div>How are you doing?</div>
+      <time>12min</time>
+    </div>
+  
+    <div class="message send bg-male">
+      <div class="author">You:</div>
+      <div>Hey pretty</div>
+      <div>I'm fine you know</div>
+      <time>10min</time>
+    </div>
+  
+    <div class="message received bg-female">
+      <div class="author">She:</div>
+      <div>Hey darling</div>
+      <div>How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing?</div>
+      <time>12min</time>
+    </div>
+  
+    <div class="message send bg-male">
+      <div class="author">You:</div>
+      <div>Hey pretty</div>
+      <div>I'm fine you know</div>
+      <time>10min</time>
+    </div>
+  
+    <div class="animate__animated animate__fadeInLeft message received bg-female">
+      <div class="author">She:</div>
+      <div class="typing-ellipsis">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <time>now</time>
+    </div>
+
+    <div class="animate__animated animate__fadeInRight message send bg-male">
+      <div class="author">You:</div>
+      <div class="typing-ellipsis">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <time>now</time>
+    </div>
   </div>
 </section>
 
-<div>
-  <textarea></textarea>
-  <button>send</button>
+<div class="compose">
+  <textarea placeholder="Press enter to send message"></textarea>
+  <button type="button" class="bg-primary brutal-button-icon">
+    <ng-icon name="tablerHeartBroken"></ng-icon>
+  </button>
 </div>
