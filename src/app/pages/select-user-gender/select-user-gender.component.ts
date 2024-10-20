@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { firstValueFrom, timer } from 'rxjs';
+import { Gender } from '../../domain/gender.enum';
 
 @Component({
   selector: 'dark-select-user-gender',
@@ -7,4 +10,18 @@ import { Component } from '@angular/core';
 })
 export class SelectUserGenderComponent {
 
+  genderMale = Gender.MALE;
+  genderFemale = Gender.FEMALE;
+
+  gender: Gender | null = null;
+
+  constructor(
+    private router: Router
+  ) { }
+
+  async genderChoose(gender: Gender | null): Promise<void> {
+    this.gender = gender;
+    await firstValueFrom(timer(1000));
+    await this.router.navigate(['/attracted']);
+  }
 }

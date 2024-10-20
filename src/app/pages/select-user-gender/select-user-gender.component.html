@@ -1,10 +1,12 @@
-<div class="heart primary"></div>
-<div class="heart secondary"></div>
+<div class="heart-wrapper">
+  <div [class.animate__heartBeat]="gender" class="heart primary"></div>
+  <div [class.animate__heartBeat]="gender" class="heart secondary"></div>
+</div>
 
 <form>
-  <div>
-
-    <button type="button">Male</button>
-    <button type="button">Female</button>
+  <h1 class="heading">Select your gender</h1>
+  <div class="vertical-button">
+    <button (click)="genderChoose(genderMale)" class="brutal-button" type="button">Male</button>
+    <button (click)="genderChoose(genderFemale)" class="brutal-button bg-secondary" type="button">Female</button>
   </div>
 </form>

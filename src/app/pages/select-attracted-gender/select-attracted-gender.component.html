@@ -1,10 +1,12 @@
-<div class="heart primary"></div>
-<div class="heart secondary"></div>
+<div [class.animate__bounceOut]="animateOut" class="heart-wrapper">
+  <div [class.animate__heartBeat]="attracted" class="heart primary"></div>
+  <div [class.animate__heartBeat]="attracted" class="heart secondary"></div>
+</div>
 
 <form>
-  <div>
-
-    <button type="button">Male</button>
-    <button type="button">Female</button>
+  <h1 class="heading">Searching for</h1>
+  <div class="vertical-button">
+    <button (click)="attractedChoose(genderFemale)" class="brutal-button bg-secondary" type="button">Female</button>
+    <button (click)="attractedChoose(genderMale)" class="brutal-button" type="button">Male</button>
   </div>
 </form>

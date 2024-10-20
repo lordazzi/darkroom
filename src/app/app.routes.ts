@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { SelectUserGenderComponent } from './pages/select-user-gender/select-user-gender.component';
 import { SelectAttractedGenderComponent } from './pages/select-attracted-gender/select-attracted-gender.component';
-import { ChatingComponent } from './pages/chating/chating.component';
 
 export const routes: Routes = [
   {
@@ -15,7 +14,8 @@ export const routes: Routes = [
   },
 
   {
-    path: 'chating',
-    component: ChatingComponent
+    path: '',
+    redirectTo: 'select-gender',
+    pathMatch: 'full'
   }
 ];
