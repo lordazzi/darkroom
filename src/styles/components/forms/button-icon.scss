@@ -1,0 +1,21 @@
+button.brutal-button-icon {
+  @include brutal-border-thin;
+  @include brutal-rounded;    
+
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 32px;
+  padding: .15rem;
+
+  display: flex;
+  position: relative;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--baseSecondaryDarker);
+
+  &:active {
+    @include brutal-border-thin-active;
+  }
+}

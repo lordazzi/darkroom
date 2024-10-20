@@ -1,49 +1,47 @@
+@font-face {
+  font-family: 'LoveYaLikeASister';
+  src: url('/fonts/Love_Ya_Like_A_Sister/LoveYaLikeASister-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BarlowSemiCondensed';
+  src: url('/fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  --base: rgb(54 42 52);
-  --primary: rgb(181 46 70);
-  --secondary: rgb(179 60 81);
+  --base: rgb(57 40 54);
+  --primary: rgb(181 46 47);
+  --secondary: rgb(193 42 69);
+  --selection: rgb(55, 12, 82);
 
-  --separator: rgb(199 144 234);
+  --male: rgb(181 46 47);
+  --female: rgb(193 42 69);
 
-  background-color: var(--base);
+  --contrast: rgb(28 22 27);
 }
 
-.heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
-  margin-top: 10px;
-  background-color: transparent !important;
+//  theme
+@import 'styles/themes/default';
 
-  &.primary::before,
-  &.primary::after {
-    background-color: var(--primary);
-  }
+//  tools
+@import 'styles/tools/brutal-tools';
+@import 'styles/tools/bottom-bordered';
 
-  &.secondary::before,
-  &.secondary::after {
-    background-color: var(--secondary);
-  }
+//  reset
+@import 'styles/elements/reset';
+@import 'styles/elements/body';
+@import 'styles/elements/heading';
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 52px;
-    height: 80px;
-    border-radius: 50px 50px 10px 10px;
-  }
+//  components
+@import 'styles/components/heart';
+@import 'styles/components/typing-ellipsis';
 
-  &::before {
-    left: 50px;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-  }
-  
-  &::after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
-  }
-}
+//  forms components
+@import 'styles/components/forms/field-container';
+@import 'styles/components/forms/button-icon';
+@import 'styles/components/forms/button';
+@import 'styles/components/forms/button-group';

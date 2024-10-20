@@ -1,0 +1,81 @@
+.heart-wrapper {
+  border-radius: 50%;
+  background-color: var(--contrast);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin: 5rem auto;
+
+  .heart {
+    &.primary {
+      left: 20px;
+      transform: rotate(-5deg);
+    }
+  
+    &.secondary {
+      left: -20px;
+      transform: rotate(5deg);
+    }
+  }
+}
+
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  margin-top: 10px;
+  background-color: transparent !important;
+
+  &.primary {
+    &::before,
+    &::after {
+      background-color: var(--primary);
+    }
+  }
+
+  &.secondary {
+    &::before,
+    &::after {
+      background-color: var(--secondary);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 10px 10px;
+  }
+
+  &::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  &::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+}
+
+.heart-small {
+  width: 1px;
+  height: 1px;
+  flex: 0 0 10px;
+  margin-right: 2rem;
+  transform: scale(.2);
+}
+
+.heart-small {
+  width: 1px;
+  height: 1px;
+  flex: 0 0 10px;
+  margin-right: 2rem;
+  transform: scale(.2);
+}

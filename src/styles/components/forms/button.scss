@@ -1,0 +1,18 @@
+button.brutal-button {
+  @include brutal-border-thin;
+  @include brutal-radius;
+
+  cursor: pointer;
+  padding: .5rem 1rem;
+  background-color: var(--primary);
+  align-items: center;
+  display: flex;
+
+  &:active {
+    @include brutal-border-thin-active;
+  }
+
+  &.brutal-secondary {
+    background-color: var(--secondary);
+  }
+}

@@ -1,0 +1,43 @@
+div.brutal-field-container {
+  position: relative;
+
+  &.larger > input {
+    height: 50px;
+  }
+
+  > input,
+  > textarea,
+  > select {
+    @include brutal-border-thin;
+    @include brutal-radius;
+    
+    padding: .5rem;
+    box-sizing: border-box;
+    width: 100%;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  > textarea {
+    min-height: 5rem;
+  }
+
+  > label {
+    font-weight: bold;
+    display: block;
+    margin: .75rem 0 .4rem;
+  }
+
+  > button {
+    position: absolute;
+    float: right;
+    right: 1rem;
+    bottom: 10px;
+
+    &.second {
+      right: 3.5rem;
+    }
+  }
+}

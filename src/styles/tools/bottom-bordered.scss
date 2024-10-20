@@ -1,0 +1,4 @@
+@mixin bottom-bordered {
+  padding: .5rem;
+  border-bottom: 1px solid var(--contrast);
+}

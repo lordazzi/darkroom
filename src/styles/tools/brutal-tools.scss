@@ -1,0 +1,53 @@
+$brutalBorderSize: 5px;
+$brutalBorderThinSize: 3px;
+
+@mixin brutal-border {
+  border: 3px solid var(--contrast);
+  box-shadow: 5px 5px var(--contrast);
+}
+
+@mixin brutal-border-thin {
+  border: 2px solid var(--contrast);
+  box-shadow: 3px 3px var(--contrast);
+}
+
+@mixin brutal-button-active {
+  box-shadow: none !important;
+  position: relative;
+}
+
+@mixin brutal-border-active {
+  @include brutal-border;
+  @include brutal-button-active;
+
+  top: 5px;
+  left: 5px;
+}
+
+@mixin brutal-border-thin-active {
+  @include brutal-border-thin;
+  @include brutal-button-active;
+  top: 3px;
+  left: 3px; 
+}
+
+@mixin thin-brutal-border-active {
+  @include brutal-border;
+  box-shadow: none !important;
+}
+
+@mixin brutal-radius {
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+@mixin brutal-rounded {
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+@mixin brutal {
+  @include brutal-border;
+  @include brutal-radius;
+}
+
