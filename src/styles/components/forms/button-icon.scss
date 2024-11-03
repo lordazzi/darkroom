@@ -1,6 +1,6 @@
 button.brutal-button-icon {
   @include brutal-border-thin;
-  @include brutal-rounded;    
+  @include brutal-rounded;
 
   width: 32px;
   height: 32px;
@@ -9,7 +9,7 @@ button.brutal-button-icon {
   padding: .15rem;
 
   display: flex;
-  position: relative;
+  position: absolute;
   outline: none;
   align-items: center;
   justify-content: center;

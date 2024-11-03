@@ -27,8 +27,7 @@ $brutalBorderThinSize: 3px;
 @mixin brutal-border-thin-active {
   @include brutal-border-thin;
   @include brutal-button-active;
-  top: 3px;
-  left: 3px; 
+  margin: 0 -3px -3px 0;
 }
 
 @mixin thin-brutal-border-active {

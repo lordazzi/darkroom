@@ -1,10 +1,11 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { SelectUserGenderComponent } from './pages/select-user-gender/select-user-gender.component';
 import { SelectAttractedGenderComponent } from './pages/select-attracted-gender/select-attracted-gender.component';
-import { ChatingComponent } from './pages/chating/chating.component';
 import { SearchingDarkroomComponent } from './pages/searching-darkroom/searching-darkroom.component';
+import { ChatingComponent } from './pages/chating/chating.component';
+import { NgModule } from '@angular/core';
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: 'select-gender',
     component: SelectUserGenderComponent
@@ -31,3 +32,9 @@ export const routes: Routes = [
     pathMatch: 'full'
   }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
