@@ -22,6 +22,10 @@ export class SelectUserGenderComponent {
   async genderChoose(gender: Gender | null): Promise<void> {
     this.gender = gender;
     await firstValueFrom(timer(1000));
-    await this.router.navigate(['/attracted']);
+    this.router.navigate(['/attracted'], {
+      state: {
+        user: gender
+      }
+    });
   }
 }

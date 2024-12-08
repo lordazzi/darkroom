@@ -1,22 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MessageAuthorColorPipe } from './message-author-color.pipe';
+import { MessageAuthorNamePipe } from './message-author-name.pipe';
 import { MessageTimePipe } from './message-time.pipe';
-import { AuthorLabelPipe } from './author-label.pipe';
-import { MessageAuthorPipe } from './message-author.pipe';
 
 @NgModule({
   declarations: [
     MessageTimePipe,
-    AuthorLabelPipe,
-    MessageAuthorPipe
+    MessageAuthorNamePipe,
+    MessageAuthorColorPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
     MessageTimePipe,
-    AuthorLabelPipe,
-    MessageAuthorPipe
+    MessageAuthorNamePipe,
+    MessageAuthorColorPipe
   ]
 })
 export class MessageWidgetModule { }

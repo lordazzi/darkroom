@@ -7,6 +7,7 @@ button.brutal-button {
   background-color: var(--primary);
   align-items: center;
   display: flex;
+  -webkit-tap-highlight-color: transparent;
 
   &:active {
     @include brutal-border-thin-active;

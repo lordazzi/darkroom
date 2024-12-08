@@ -1,5 +1,5 @@
 # DarkRoom
 
 ## Motto
-> Awake, O north wind; and come, you south; blow on my garden, that the spices thereof may flow out. Let my beloved come into his garden, and eat his pleasant fruits.
-> Song of Solomon 5.16
+> And the LORD God said, It is not good that the man should be alone; I will make him an help meet for him.
+> Genesis 2.18
