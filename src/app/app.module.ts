@@ -1,13 +1,15 @@
 import { NgModule } from "@angular/core";
-import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
-import { AppRoutingModule } from "./app-routing.module";
 import { NgIconsModule, provideNgIconsConfig } from "@ng-icons/core";
 import { tablerHeart, tablerHeartBroken } from "@ng-icons/tabler-icons";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 import { ChatingModule } from "./pages/chating/chating.module";
 import { SearchingDarkroomModule } from "./pages/searching-darkroom/searching-darkroom.module";
 import { SelectAttractedGenderModule } from "./pages/select-attracted-gender/select-attracted-gender.module";
 import { SelectUserGenderModule } from "./pages/select-user-gender/select-user-gender.module";
+import { ErrorHandlingModule } from "./shared/error-handling/error-handling.module";
+import { ParodyConfigModule } from "./shared/parody-config/parody-config.module";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { SelectUserGenderModule } from "./pages/select-user-gender/select-user-g
       tablerHeartBroken
     }),
     ChatingModule,
+    ParodyConfigModule,
+    ErrorHandlingModule,
     SelectUserGenderModule,
     SearchingDarkroomModule,
     SelectAttractedGenderModule
