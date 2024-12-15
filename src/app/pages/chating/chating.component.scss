@@ -35,10 +35,14 @@
     padding: 1rem;
     margin: 0 auto;
     max-width: 600px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
 
     .message {
       @include brutal-border;
-      width: 85%;
+      max-width: 85%;
+      min-width: 45%;
       color: white;
       padding: .5rem;
       margin-bottom: .5rem;
@@ -80,10 +84,48 @@
   
       &.received {
         float: left;
+        align-self: flex-start;
+        
+        &.bg-male:before {
+          border-right-color: var(--male);
+        }
+      
+        &.bg-female:before {
+          border-right-color: var(--female);
+        }
+
+        &:before {
+          left: -20px;
+        }
+
+        &:after {
+          border-right-color: var(--contrast);
+          left: -28px;
+          border-width: 14px;
+          top: 6px;
+        }
       }
   
       &.send {
         float: right;
+        align-self: flex-end;
+        
+        &.bg-male:before {
+          border-left-color: var(--male);
+        }
+      
+        &.bg-female:before {
+          border-left-color: var(--female);
+        }
+        
+        &:before {
+          left: 100%;
+        }
+  
+        &:after {
+          border-left-color: var(--contrast);
+          left: calc(100% + 2px);
+        }
       }
   
       time {
@@ -99,38 +141,6 @@
 
       &:after {
         z-index: 1;
-      }
-
-      &.received.bg-male:before {
-        border-right-color: var(--male);
-        left: -20px;
-      }
-    
-      &.received.bg-female:before {
-        border-right-color: var(--female);
-        left: -20px;
-      }
-
-      &.received:after {
-        border-right-color: var(--contrast);
-        left: -28px;
-        border-width: 14px;
-        top: 6px;
-      }
-      
-      &.send.bg-male:before {
-        border-left-color: var(--male);
-        left: 100%;
-      }
-    
-      &.send.bg-female:before {
-        border-left-color: var(--female);
-        left: 100%;
-      }
-
-      &.send:after {
-        border-left-color: var(--contrast);
-        left: calc(100% + 2px);
       }
     }
   }
@@ -154,9 +164,29 @@
     outline: none;
   }
 
-  .brutal-button-icon {
+  .disconnect-button {
     position: absolute;
     right: 1rem;
     bottom: 1rem;
+
+    .cracked-heart {
+      display: block;
+    }
+    
+    .broken-heart {
+      display: none;
+    }
+
+    &:hover,
+    &:active {
+      .cracked-heart {
+        display: none;
+      }
+  
+      .broken-heart {
+        display: block;
+      }
+    }
   }
 }
+

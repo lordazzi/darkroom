@@ -4,37 +4,24 @@
 
 <section #history class="history">
   <div>
-
-    <div class="message received bg-female">
-      <div class="author">She:</div>
-      <div>Hey darling</div>
-      <div>How are you doing?</div>
-      <time>12min</time>
+    <div
+      *ngFor="let message of messages"
+      class="message"
+      [class.send]="message.author.me"
+      [class.received]="!message.author.me"
+      [class.bg-male]="message.author.gender === genderMale"
+      [class.bg-female]="message.author.gender === genderFemale"
+    >
+      <div class="author">{{ message.author | messageAuthorName }}:</div>
+      <div *ngFor="let paragraph of message.paragraphs">{{paragraph}}</div>
+      <time>{{ message.time | messageTime }}</time>
     </div>
   
-    <div class="message send bg-male">
-      <div class="author">You:</div>
-      <div>Hey pretty</div>
-      <div>I'm fine you know</div>
-      <time>10min</time>
-    </div>
-  
-    <div class="message received bg-female">
-      <div class="author">She:</div>
-      <div>Hey darling</div>
-      <div>How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing? How are you doing?</div>
-      <time>12min</time>
-    </div>
-  
-    <div class="message send bg-male">
-      <div class="author">You:</div>
-      <div>Hey pretty</div>
-      <div>I'm fine you know</div>
-      <time>10min</time>
-    </div>
-  
-    <div class="animate__animated animate__fadeInLeft message received bg-female">
-      <div class="author">She:</div>
+    <div *ngIf="partnerIsTyping" class="animate__animated animate__fadeInLeft message received"
+      [class.bg-male]="partner.gender === genderMale"
+      [class.bg-female]="partner.gender === genderFemale"
+    >
+      <div class="author">{{ partner | messageAuthorName }}:</div>
       <div class="typing-ellipsis">
         <div class="dot"></div>
         <div class="dot"></div>
@@ -43,7 +30,10 @@
       <time>now</time>
     </div>
 
-    <div class="animate__animated animate__fadeInRight message send bg-male">
+    <div *ngIf="userIsTyping" class="animate__animated animate__fadeInRight message send"
+      [class.bg-male]="userGender === genderMale"
+      [class.bg-female]="userGender === genderFemale"
+    >
       <div class="author">You:</div>
       <div class="typing-ellipsis">
         <div class="dot"></div>
@@ -56,8 +46,9 @@
 </section>
 
 <div class="compose">
-  <textarea placeholder="Press enter to send message"></textarea>
-  <button type="button" class="bg-primary brutal-button-icon">
-    <ng-icon name="tablerHeartBroken" size="24" color="currentColor"></ng-icon>
+  <textarea #messageField (keydown.enter)="sendMessage(messageField)" (keydown)="onTyping()" placeholder="Press enter to send message"></textarea>
+  <button type="button" class="bg-primary brutal-button-icon disconnect-button">
+    <ng-icon name="tablerHeartBroken" class="cracked-heart" size="24" color="currentColor"></ng-icon>
+    <ng-icon name="deepHeartBroken" class="broken-heart" size="24" color="currentColor" style="stroke-width:var(--ng-icon__stroke-width, 2)"></ng-icon>
   </button>
 </div>

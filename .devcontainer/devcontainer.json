@@ -16,7 +16,9 @@
         "wix.vscode-import-cost",
         "natewallace.angular2-inline",
         "ms-azuretools.vscode-docker",
-        "pink-dream.pink-dream"
+        "pink-dream.pink-dream",
+        "SimonSiefke.svg-preview",
+        "kontrail.vscode-svg-dev"
       ]
 		}
 	}

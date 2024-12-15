@@ -13,5 +13,4 @@ export class MessageAuthorColorPipe implements PipeTransform {
       return 'bg-female';
     }
   }
-
 }

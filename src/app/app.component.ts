@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
+import { ErrorMessagesObservable } from './shared/error-handling/error-messages.observable';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'darkroom';
+
+  private subscriptions = new Subscription();
+
+  constructor(
+    private error$: ErrorMessagesObservable
+  ) { }
+
+  ngOnInit(): void {
+    this.subscriptions.add(this.error$.subscribe(message => console.error(message)));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 }
