@@ -5,8 +5,8 @@ import { Subscription } from 'rxjs';
 import { ChatParticipant } from '../../domain/chat-participant.model';
 import { Gender } from '../../domain/gender.enum';
 import { Message } from '../../domain/message.model';
-import { HeaderTitleFactory } from './header-title.factory';
 import { GlobalErrorHandler } from '../../shared/error-handling/global.error-handler';
+import { HeaderTitleFactory } from './header-title.factory';
 
 @Component({
   selector: 'dark-chating',
