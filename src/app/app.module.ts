@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AsyncModalModule } from '@belomonte/async-modal-ngx';
 import { NgIconsModule, provideNgIconsConfig } from '@ng-icons/core';
 import { tablerHeart, tablerHeartBroken } from '@ng-icons/tabler-icons';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +11,7 @@ import { SelectAttractedGenderModule } from './pages/select-attracted-gender/sel
 import { SelectUserGenderModule } from './pages/select-user-gender/select-user-gender.module';
 import { ErrorHandlingModule } from './shared/error-handling/error-handling.module';
 import { ParodyConfigModule } from './shared/parody-config/parody-config.module';
-import { AsyncModalModule } from '@belomonte/async-modal-ngx';
+import { DisconnectModalModule } from './shared/disconnect-modal/disconnect-modal.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AsyncModalModule } from '@belomonte/async-modal-ngx';
     ChatingModule,
     ParodyConfigModule,
     ErrorHandlingModule,
+    DisconnectModalModule,
     SelectUserGenderModule,
     SearchingDarkroomModule,
     SelectAttractedGenderModule

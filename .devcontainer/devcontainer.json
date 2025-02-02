@@ -5,6 +5,7 @@
   ],
   "service": "darkroom-dev",
 	"workspaceFolder": "/darkroom",
+  "postCreateCommand": "./.devcontainer/auth.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
