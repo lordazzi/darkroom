@@ -24,6 +24,7 @@ RUN rm -rf /var/lib/apt/lists/*
 ENV LANG C.UTF-8
 WORKDIR /darkroom
 
+# Instala rust
 RUN curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 
 EXPOSE 4199

@@ -1,0 +1,37 @@
+modal-outlet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+
+  > * {
+    margin: 0 auto;
+    display: block;
+    min-width: 200px;
+    background-color: var(--base);
+    border-radius: 15px;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 400px;
+    margin-top: 10%;
+    @include brutal-border;
+
+    p {
+      color: rgb(255 59 47); /** FIXME: seria bom colocar esta cor em uma variável */
+      font-weight: bolder;
+      margin: 0 0 1rem 0;
+    }
+
+    footer.tray-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
