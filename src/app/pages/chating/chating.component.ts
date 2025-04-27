@@ -1,10 +1,13 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalService } from '@belomonte/async-modal-ngx';
 import { TalkToStrangerParody } from '@belomonte/ngx-parody-api';
 import { NostrEvent } from '@nostrify/nostrify';
 import { Subscription } from 'rxjs';
 import { ChatParticipant } from '../../domain/chat-participant.model';
 import { Gender } from '../../domain/gender.enum';
 import { Message } from '../../domain/message.model';
+import { DisconnectModalComponent } from '../../shared/disconnect-modal/disconnect-modal.component';
 import { GlobalErrorHandler } from '../../shared/error-handling/global.error-handler';
 import { HeaderTitleFactory } from './header-title.factory';
 
@@ -43,9 +46,11 @@ export class ChatingComponent implements OnInit, OnDestroy {
   private subscriptions = new Subscription();
 
   constructor(
+    private router: Router,
     private globalErrorHandler: GlobalErrorHandler,
     private headerTitleFactory: HeaderTitleFactory,
-    private talkToStrangerParody: TalkToStrangerParody
+    private talkToStrangerParody: TalkToStrangerParody,
+    private modalService: ModalService
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +63,24 @@ export class ChatingComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+  }
+
+  triggerDisconnectModal(): void {
+    this.modalService
+    .createModal(DisconnectModalComponent)
+    .build()
+    .subscribe({
+      next: response => {
+        if (response) {
+          this.router.navigate(['/try-again'], {
+            state: {
+              user: this.userGender,
+              search: this.searchGender
+            }
+          });
+        }
+      }
+    });
   }
 
   private fetchRouteData(): void {
@@ -83,7 +106,6 @@ export class ChatingComponent implements OnInit, OnDestroy {
   }
 
   private startConversation(): void {
-    console.info('partner:', this.partner);
     this.subscriptions.add(this.talkToStrangerParody
       .listenMessages(this.partner)
       .subscribe({
@@ -105,7 +127,6 @@ export class ChatingComponent implements OnInit, OnDestroy {
           gender: this.userGender,
           me: true
         };
-        console.info('user:', this.user);
       }
     ));
   }

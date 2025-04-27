@@ -47,7 +47,7 @@
 
 <div class="compose">
   <textarea #messageField (keydown.enter)="sendMessage(messageField)" (keydown)="onTyping()" placeholder="Press enter to send message"></textarea>
-  <button type="button" class="bg-primary brutal-button-icon disconnect-button">
+  <button type="button" (click)="triggerDisconnectModal()" class="bg-primary brutal-button-icon disconnect-button">
     <ng-icon name="tablerHeartBroken" class="cracked-heart" size="24" color="currentColor"></ng-icon>
     <ng-icon name="deepHeartBroken" class="broken-heart" size="24" color="currentColor" style="stroke-width:var(--ng-icon__stroke-width, 2)"></ng-icon>
   </button>

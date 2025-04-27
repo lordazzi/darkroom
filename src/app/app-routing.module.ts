@@ -1,9 +1,10 @@
-import { RouterModule, Routes } from '@angular/router';
-import { SelectUserGenderComponent } from './pages/select-user-gender/select-user-gender.component';
-import { SelectAttractedGenderComponent } from './pages/select-attracted-gender/select-attracted-gender.component';
-import { SearchingDarkroomComponent } from './pages/searching-darkroom/searching-darkroom.component';
-import { ChatingComponent } from './pages/chating/chating.component';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ChatingComponent } from './pages/chating/chating.component';
+import { SearchingDarkroomComponent } from './pages/searching-darkroom/searching-darkroom.component';
+import { SelectAttractedGenderComponent } from './pages/select-attracted-gender/select-attracted-gender.component';
+import { SelectUserGenderComponent } from './pages/select-user-gender/select-user-gender.component';
+import { TryAgainComponent } from './pages/try-again/try-again.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'chating',
     component: ChatingComponent
+  },
+
+  {
+    path: 'try-again',
+    component: TryAgainComponent
   },
 
   {

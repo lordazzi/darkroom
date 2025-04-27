@@ -9,9 +9,10 @@ import { ChatingModule } from './pages/chating/chating.module';
 import { SearchingDarkroomModule } from './pages/searching-darkroom/searching-darkroom.module';
 import { SelectAttractedGenderModule } from './pages/select-attracted-gender/select-attracted-gender.module';
 import { SelectUserGenderModule } from './pages/select-user-gender/select-user-gender.module';
+import { DisconnectModalModule } from './shared/disconnect-modal/disconnect-modal.module';
 import { ErrorHandlingModule } from './shared/error-handling/error-handling.module';
 import { ParodyConfigModule } from './shared/parody-config/parody-config.module';
-import { DisconnectModalModule } from './shared/disconnect-modal/disconnect-modal.module';
+import { TryAgainModule } from './pages/try-again/try-again.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DisconnectModalModule } from './shared/disconnect-modal/disconnect-moda
       tablerHeartBroken
     }),
     ChatingModule,
+    TryAgainModule,
     ParodyConfigModule,
     ErrorHandlingModule,
     DisconnectModalModule,
