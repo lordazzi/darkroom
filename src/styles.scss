@@ -12,24 +12,13 @@
   font-style: normal;
 }
 
-body {
-  --base: rgb(57 40 54);
-  --primary: rgb(181 46 47);
-  --secondary: rgb(193 42 69);
-  --selection: rgb(55, 12, 82);
-
-  --male: rgb(181 46 47);
-  --female: rgb(193 42 69);
-
-  --contrast: rgb(28 22 27);
-}
-
 //  theme
 @import 'styles/themes/default';
 
 //  tools
 @import 'styles/tools/brutal-tools';
 @import 'styles/tools/bottom-bordered';
+@import 'styles/tools/vertical-button';
 
 //  reset
 @import 'styles/elements/reset';

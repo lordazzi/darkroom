@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '@belomonte/async-modal-ngx';
-import { TalkToStrangerParody } from '@belomonte/ngx-parody-api';
+import { FindStrangerParody, TalkToStrangerParody } from '@belomonte/ngx-parody-api';
 import { NostrEvent } from '@nostrify/nostrify';
 import { Subscription } from 'rxjs';
 import { ChatParticipant } from '../../domain/chat-participant.model';
@@ -47,6 +47,7 @@ export class ChatingComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
+    private findStrangerParody: FindStrangerParody,
     private globalErrorHandler: GlobalErrorHandler,
     private headerTitleFactory: HeaderTitleFactory,
     private talkToStrangerParody: TalkToStrangerParody,
@@ -72,13 +73,19 @@ export class ChatingComponent implements OnInit, OnDestroy {
     .subscribe({
       next: response => {
         if (response) {
-          this.router.navigate(['/try-again'], {
-            state: {
-              user: this.userGender,
-              search: this.searchGender
-            }
-          });
+          this.findStrangerParody
+            .endSession()
+            .then(() => this.redirectTryAgain());
         }
+      }
+    });
+  }
+
+  private redirectTryAgain(): void {
+    this.router.navigate(['/try-again'], {
+      state: {
+        user: this.userGender,
+        search: this.searchGender
       }
     });
   }

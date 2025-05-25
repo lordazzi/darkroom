@@ -1,20 +1,16 @@
-/** FIXME: tema do agroflorestando, neste software está sobrescrito em style.scss, preciso me organizar sobre isso */
-body[data-theme="default"] {
-  --base: #BAFCA2;
-  --contrast: rgb(15, 20, 25);
-  --baseText: var(--contrast);
+body {
+  --base: rgb(57 40 54);
 
-  --baseSecondary: white;
-  --baseSecondaryDarker: rgb(253, 229, 229);
-  --baseSecondaryText: black;
+  --primary: rgb(181 46 47);
+  --secondary: rgb(193 42 69);
+  --selection: rgb(55, 12, 82);
 
-  --primary: #7FBC8C;
-  --primaryContrast: black;
-  
-  --secondary: #F4D738;
-  --secondaryContrast: var(--primaryContrast);
+  --male: rgb(181 46 47);
+  --female: rgb(193 42 69);
 
-  --danger: #FF7423;
+  --contrast: rgb(28 22 27);
+  --confirm: #c11616;
+  --cancel: var(--primary);
 }
 
 .bg-base {
@@ -29,10 +25,6 @@ body[data-theme="default"] {
   background-color: var(--secondary) !important;
 }
 
-.bg-tertiary {
-  background-color: var(--tertiary) !important;
-}
-
 .bg-male {
   background-color: var(--male) !important;
 }
@@ -41,8 +33,12 @@ body[data-theme="default"] {
   background-color: var(--female) !important;
 }
 
-.bg-danger {
-  background-color: var(--danger) !important;
+.bg-confirm {
+  background-color: var(--confirm) !important;
+}
+
+.bg-cancel {
+  background-color: var(--cancel) !important;
 }
 
 .text-male {

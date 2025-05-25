@@ -4,9 +4,9 @@ import { Gender } from '../../domain/gender.enum';
 @Injectable()
 export class HeaderTitleFactory {
 
-  private [Gender.MALE] = ['guy','dude','man','pal','male','mister','lord', 'potential husband', 'potential boyfriend'];
-  private [Gender.FEMALE] = ['woman','lady','female','miss','dame','madam','missy','potential wife', 'potential girlfriend'];
-  private both = ['partner','crush', 'match'];
+  private [Gender.MALE] = ['guy','man','mister','potential husband', 'potential boyfriend'];
+  private [Gender.FEMALE] = ['lady','woman','potential wife', 'potential girlfriend'];
+  private both = ['crush', 'match'];
   private advice = ['kind','nice','fine','pretty','cool','tender','lovely','good','friendly','awesome','great','gentle','gracious'];
 
   getTitle(genderFound: Gender): string {

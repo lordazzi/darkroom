@@ -35,6 +35,7 @@ export class SearchingDarkroomComponent implements OnInit {
 
   private findStranger(): void {
     const { user, search } = history.state;
+    this.controller.signal.onabort = () => console.info('ABORT WAS LAUNCHED!!');
 
     this.findStrangerParody
       .searchStranger({
@@ -50,6 +51,10 @@ export class SearchingDarkroomComponent implements OnInit {
             partner: { ...partner, gender: search }
           }
         });
+      }).catch(e => {
+        // FIXME: preciso incluir uma modal de erro aqui
+        this.controller.abort();
+        this.router.navigate(['select-gender']);
       });
   }
 
