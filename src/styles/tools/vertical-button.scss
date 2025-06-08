@@ -4,8 +4,16 @@
   display: flex;
   flex-direction: column;
 
+  > button.brutal-button,
   > button {
     justify-content: center;
     margin: .5rem;
+
+    &:active {
+      margin-right: 7px;
+      margin-bottom: 7px;
+      margin-left: 7px;
+      margin-top: 9px;
+    }
   }
 }

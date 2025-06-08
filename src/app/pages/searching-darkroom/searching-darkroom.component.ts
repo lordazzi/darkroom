@@ -40,8 +40,8 @@ export class SearchingDarkroomComponent implements OnInit {
     this.findStrangerParody
       .searchStranger({
         signal: this.controller.signal,
-        searchTags: [ search ],
-        userTags: [ user ]
+        searchFor: search,
+        userIs: user
       })
       .then(partner => {
         this.router.navigate(['/chating'], {

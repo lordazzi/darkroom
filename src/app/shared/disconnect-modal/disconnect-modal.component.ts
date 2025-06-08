@@ -11,7 +11,7 @@ export class DisconnectModalComponent extends ModalableDirective<void, boolean> 
 
   override response = new Subject<boolean | void>();
   
-  ok(): void {
+  breakHeart(): void {
     this.response.next(true);
     //  close method will complete the response observable
     this.close();
